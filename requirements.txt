@@ -1,0 +1,3 @@
+urwid
+wikipedia
+pyfiglet
