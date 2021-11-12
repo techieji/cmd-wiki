@@ -44,6 +44,7 @@ def wrap_text(_text, maxx=100):
             else:
                 l[-1] += ' ' + word
                 col += 1 + len(word)
+            word = ''
         else:
             word += x
     return l

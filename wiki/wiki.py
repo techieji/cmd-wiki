@@ -3,9 +3,10 @@ import curses
 from time import sleep
 import wikipedia as wk
 
+title = input('Enter a search topic: ')
+
 def main(stdscr):
     curses.curs_set(0)
-    title = 'Wikipedia'
     text = wk.WikipediaPage(title=title).content
     while True:
         render.all_together_now(stdscr, title, text)
