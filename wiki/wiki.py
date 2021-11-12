@@ -2,11 +2,18 @@ import render
 import curses
 from time import sleep
 import wikipedia as wk
+import sys
 
-title = input('Enter a search topic: ')
+if len(sys.argv) == 1:
+    title = input('Enter a search topic: ')
+else:
+    title = ' '.join(sys.argv[1:])
+
+title = title.capitalize()
 
 def main(stdscr):
     curses.curs_set(0)
+    curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
     text = wk.WikipediaPage(title=title).content
     while True:
         render.all_together_now(stdscr, title, text)
